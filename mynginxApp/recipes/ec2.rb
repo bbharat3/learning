@@ -6,7 +6,10 @@ m = machine 'test' do
   :instance_type => "#{node['mynginxApp']['instance_type']}",
   :image_id  => "#{node['mynginxApp']['image']}",
   :associate_public_ip_address => true,
-  :subnet => "subnet-b47e9afc"
+  :subnet => "subnet-b97e9afc"
  }
- action :ready
+ retries 10
+ retry_delay 30
+ 
+ run_list ['mynginx::nginx']
 end

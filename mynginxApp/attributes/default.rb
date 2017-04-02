@@ -7,3 +7,7 @@ default['mynginxApp']['subnet'] = 'default'
 default['mynginxApp']['image'] = 'ami-f4cc1de2'
 default['mynginxApp']['instance_type'] = 't2.micro'
 default['mynginxApp']['sg'] = 'my-sg'
+
+
+default['mynginxApp']['proxy_server'] = 'http://localhost:8080'
+default['mynginxApp']['context_proxy'] = 'test'
