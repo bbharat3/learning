@@ -6,7 +6,7 @@ options = {
   vagrant_options: {
     'vm.box' => 'ubuntu/trusty64',
     'vm.network' => [
-        ':private_network, {ip: "192.168.33.120"}'
+        ':private_network, {ip: "XX.XX.XX.XXs"}'
 
       ]
   }
