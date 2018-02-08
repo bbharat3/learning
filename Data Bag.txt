@@ -1,0 +1,29 @@
+Create Databag in chef Server
+=============================
+
+1.	knife data bag create <databag name>
+
+2. 	Create json file which contains the information
+	
+	Sample :- 
+
+		{
+"id": "user",
+	"username": "test1"
+}
+
+3. 	Create Secret Key to encrypt or decrypt the data bag
+		
+		openssl rand -base64 512 | tr -d '\r\n' > my_Key
+	
+4.	Create Data bag item in chef server
+		
+		knife data bag from file <data bag name> <json file name> --secret-file my_key
+
+5.	To view the Data bag in encrypted form
+		
+		knife data bag show <data bag name> <data bag item>
+
+6.	To view the Data bag in decrypted form
+
+		knife data bag show <data bag name> <data bag item> --secret-file my_key
