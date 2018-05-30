@@ -1,0 +1,13 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mynginxpod
+spec:
+  template:
+    metadata:
+      labels:
+        app: mynginxpod
+    spec:
+      containers:
+      - name: mynginxpod
+        image: nginx
